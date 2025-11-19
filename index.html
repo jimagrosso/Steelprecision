@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Steel Precision - Metal Concept para Motos, Hogar y 4x4. Diseño, fabricación y personalización en metal.">
+    <title>Steel Precision | Metal Concept & Fabricación a Medida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           STEEL PRECISION - ONE PAGE DESIGN
+           ======================================== */
+        
+        /* === VARIABLES === */
+        :root {
+            --color-dark-bg: #0a0a0a;
+            --color-graphite: #1a1a1a;
+            --color-steel: #2a2a2a;
+            --color-metal-light: #4a4a4a;
+            --color-metal-bright: #6a6a6a;
+            
+            --color-accent-orange: #ff6b35;
+            --color-accent-yellow: #ffa500;
+            --color-accent-blue: #00d4ff;
+            
+            --font-display: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+            
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* === RESET === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-dark-bg);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* === HEADER === */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: all var(--transition-normal);
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+        }
+        
+        .header.scrolled {
+            padding: 0.8rem 0;
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--color-metal-bright);
+            letter-spacing: 1px;
+            margin-top: -0.2rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #e0e0e0;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition-normal);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent-orange), var(--color-accent-yellow));
+            transition: var(--transition-normal);
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--color-accent-orange);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.4rem;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-accent-orange);
+            transition: var(--transition-normal);
+            border-radius: 2px;
+        }
+        
+        /* === HERO SECTION === */
+        #inicio {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80') center/cover no-repeat;
+            z-index: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(26, 26, 26, 0.85) 100%);
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1200px;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-orange) 50%, var(--color-accent-yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-subtitle {
+            font-size: 2.2rem;
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+        
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--color-metal-bright);
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+        
+        /* === BUTTONS === */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-accent-orange), var(--color-accent-yellow));
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid var(--color-accent-blue);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-accent-blue);
+            color: #000;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+        }
+        
+        /* === SECTION TITLES === */
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--color-accent-orange), transparent);
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--color-metal-bright);
+            max-width: 800px;
+            margin: 2rem auto 4rem;
+        }
+        
+        /* === CARDS GRID === */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, var(--color-graphite) 0%, var(--color-steel) 100%);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(255, 107, 53, 0.4);
+            border-color: var(--color-accent-orange);
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .card-description {
+            font-size: 1.1rem;
+            color: var(--color-metal-bright);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        /* === GALLERY GRID === */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            background: var(--color-graphite);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(106, 106, 106, 0.2);
+            transition: all var(--transition-normal);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .gallery-item.reveal {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
+            border-color: var(--color-accent-orange);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--color-steel), var(--color-metal-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-metal-bright);
+            font-size: 3rem;
+        }
+        
+        .gallery-content {
+            padding: 1.5rem;
+        }
+        
+        .gallery-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-text {
+            color: var(--color-metal-bright);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* === CONCEPT COLUMNS === */
+        .concept-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .concept-item {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.6));
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all var(--transition-normal);
+        }
+        
+        .concept-item:hover {
+            border-color: var(--color-accent-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .concept-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .concept-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent-orange);
+            font-weight: 700;
+        }
+        
+        .concept-description {
+            font-size: 1.1rem;
+            color: var(--color-metal-bright);
+            line-height: 1.8;
+        }
+        
+        /* === PROJECT FILTER === */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--color-metal-light);
+            color: var(--color-metal-bright);
+            cursor: pointer;
+            border-radius: 6px;
+            transition: var(--transition-normal);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--color-accent-orange);
+            border-color: var(--color-accent-orange);
+            color: #000;
+        }
+        
+        .project-card {
+            background: var(--color-graphite);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(106, 106, 106, 0.2);
+            transition: all var(--transition-normal);
+        }
+        
+        .project-card.hidden {
+            display: none;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            border-color: var(--color-accent-orange);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--color-steel), var(--color-metal-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-metal-bright);
+            font-size: 3rem;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: linear-gradient(135deg, var(--color-accent-orange), var(--color-accent-yellow));
+            color: #000;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* === PROCESS STEPS === */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--color-accent-orange), var(--color-accent-yellow));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 900;
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .step-description {
+            font-size: 1.1rem;
+            color: var(--color-metal-bright);
+            line-height: 1.7;
+        }
+        
+        /* === FORM === */
+        .contact-form {
+            max-width: 700px;
+            margin: 3rem auto;
+            background: var(--color-graphite);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: var(--color-steel);
+            border: 2px solid var(--color-metal-light);
+            border-radius: 6px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-normal);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-accent-orange);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* === FOOTER === */
+        .footer {
+            background: var(--color-dark-bg);
+            padding: 4rem 2rem 2rem;
+            border-top: 2px solid rgba(255, 107, 53, 0.3);
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            font-size: 1rem;
+            color: var(--color-metal-bright);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-steel);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: var(--transition-normal);
+        }
+        
+        .social-icon:hover {
+            background: var(--color-accent-orange);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .footer-section-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--color-accent-orange);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact {
+            color: var(--color-metal-bright);
+            line-height: 1.8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-steel);
+            color: var(--color-metal-bright);
+            font-size: 0.9rem;
+        }
+        
+        /* === WHATSAPP FLOATING BUTTON === */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all var(--transition-normal);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* === ANIMATIONS === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                transition: var(--transition-normal);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .cards-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text">STEEL PRECISION</div>
+                <div class="logo-subtitle">Metal Concept & Fabricación a Medida</div>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#inicio">Inicio</a>
+                <a href="#lineas">Líneas de Trabajo</a>
+                <a href="#motos">Motos</a>
+                <a href="#casa">Casa</a>
+                <a href="#4x4">4x4</a>
+                <a href="#metal-lab">Metal Lab</a>
+                <a href="#sobre">Sobre Nosotros</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio">
+        <div class="hero-background" id="heroBackground"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">STEEL PRECISION</h1>
+            <p class="hero-subtitle">Metal Concept para Motos, Hogar y 4x4</p>
+            <p class="hero-description">
+                Diseño, fabricación y personalización en metal para quienes quieren piezas únicas, funcionales y con carácter.
+            </p>
+            <div class="hero-buttons">
+                <a href="#lineas" class="btn btn-primary">Ver Líneas de Trabajo</a>
+                <a href="#proyectos" class="btn btn-secondary">Ver Proyectos Destacados</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Líneas de Trabajo -->
+    <section id="lineas">
+        <div class="container">
+            <h2 class="section-title">Nuestras Líneas de Trabajo</h2>
+            <p class="section-subtitle">Cuatro áreas especializadas para transformar tus ideas en metal</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <span class="card-icon">🏍️</span>
+                    <h3 class="card-title">Motos & Riding Gear</h3>
+                    <p class="card-description">
+                        Petos, tableros con cargador, soportes y accesorios en metal para motos y pilotos exigentes.
+                    </p>
+                    <a href="#motos" class="btn btn-primary">Ver más</a>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🏠</span>
+                    <h3 class="card-title">Casa & Deco Metálica</h3>
+                    <p class="card-description">
+                        Celosías, protectores de aire acondicionado, mesas y mobiliario metálico hecho a medida.
+                    </p>
+                    <a href="#casa" class="btn btn-primary">Ver más</a>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🚙</span>
+                    <h3 class="card-title">4x4 & Pickups</h3>
+                    <p class="card-description">
+                        Parrillas, petos y accesorios de metal para darle carácter y protección a tu camioneta.
+                    </p>
+                    <a href="#4x4" class="btn btn-primary">Ver más</a>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🔧</span>
+                    <h3 class="card-title">Metal Lab – A Medida</h3>
+                    <p class="card-description">
+                        Tu idea, boceto o foto se convierte en una pieza real, única y funcional en metal.
+                    </p>
+                    <a href="#metal-lab" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Motos -->
+    <section id="motos" style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a);">
+        <div class="container">
+            <h2 class="section-title">Motos & Riding Gear</h2>
+            <p class="section-subtitle">Accesorios en metal diseñados para aguantar uso real: petos, tableros con cargador, soportes y más.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">🏍️</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Peto Frontal Custom</h3>
+                        <p class="gallery-text">Peto en acero inoxidable con diseño personalizado para diferentes modelos de moto.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">📱</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Tablero con Cargador USB</h3>
+                        <p class="gallery-text">Tablero metálico integrado con doble puerto USB y voltímetro digital.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">🔧</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Soportes Universales</h3>
+                        <p class="gallery-text">Soportes para GPS, teléfono y equipaje. Diseño adaptable a múltiples modelos.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">🎒</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Parrilla Trasera Reforzada</h3>
+                        <p class="gallery-text">Parrilla en tubo de acero con capacidad de carga superior. Montaje universal.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="#contacto" class="btn btn-secondary btn-large">Quiero algo para mi moto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Casa -->
+    <section id="casa">
+        <div class="container">
+            <h2 class="section-title">Casa & Deco Metálica</h2>
+            <p class="section-subtitle">Celosías, protectores de aire acondicionado y mesas que combinan seguridad, diseño y durabilidad.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">⬡</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Celosía Geométrica</h3>
+                        <p class="gallery-text">Celosía decorativa en hierro con patrón hexagonal para ventana principal.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">❄️</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Protector para Aire Acondicionado</h3>
+                        <p class="gallery-text">Protector ventilado en acero con diseño de rejilla, acabado anticorrosivo.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">🪑</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Mesa Industrial de Comedor</h3>
+                        <p class="gallery-text">Mesa con estructura en hierro negro y tapa de madera recuperada.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">📚</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Estantería Modular</h3>
+                        <p class="gallery-text">Sistema de repisas con estructura de tubos de acero. Diseño modular expandible.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="#contacto" class="btn btn-secondary btn-large">Quiero algo para mi casa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4x4 -->
+    <section id="4x4" style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a);">
+        <div class="container">
+            <h2 class="section-title">4x4 & Pickups</h2>
+            <p class="section-subtitle">Petos, parrillas y accesorios para darle presencia y protección a tu camioneta.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">🛡️</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Peto Frontal Hilux</h3>
+                        <p class="gallery-text">Peto frontal reforzado en tubo de acero, acabado negro mate texturizado.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">📦</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Parrilla Modular Completa</h3>
+                        <p class="gallery-text">Sistema completo con rieles longitudinales y barras transversales. Capacidad 200kg.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">🔦</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Soporte de Faros Auxiliares</h3>
+                        <p class="gallery-text">Montaje para doble faro auxiliar en capó. Ajustable y con cableado incluido.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">🪜</div>
+                    <div class="gallery-content">
+                        <h3 class="gallery-title">Escalerillas Laterales</h3>
+                        <p class="gallery-text">Estribos de aluminio con superficie antideslizante. Montaje sin perforación.</p>
+                        <a href="#contacto" class="btn btn-primary">Quiero algo parecido</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="#contacto" class="btn btn-secondary btn-large">Quiero algo para mi camioneta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Metal Lab -->
+    <section id="metal-lab">
+        <div class="container">
+            <h2 class="section-title">Metal Lab – Zona Libre de Ideas</h2>
+            <p class="section-subtitle">Aquí entran los inventos, estructuras raras, soportes especiales y cualquier idea que tengas en metal.</p>
+            
+            <div class="concept-columns">
+                <div class="concept-item">
+                    <div class="concept-icon">💡</div>
+                    <h3 class="concept-title">Tu Idea</h3>
+                    <p class="concept-description">
+                        Trae tu idea en cualquier formato: boceto, foto de referencia, descripción o nota de voz. No importa qué tan "loca" parezca.
+                    </p>
+                </div>
+
+                <div class="concept-item">
+                    <div class="concept-icon">🔧</div>
+                    <h3 class="concept-title">Nuestra Ingeniería</h3>
+                    <p class="concept-description">
+                        La convertimos en diseño técnico viable: medidas reales, materiales adecuados, viabilidad de fabricación.
+                    </p>
+                </div>
+
+                <div class="concept-item">
+                    <div class="concept-icon">⚙️</div>
+                    <h3 class="concept-title">Pieza Real</h3>
+                    <p class="concept-description">
+                        Fabricamos con precisión y te entregamos una pieza única, funcional y duradera.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem;">
+                <h3 style="text-align: center; font-family: var(--font-display); font-size: 2rem; color: #fff; margin-bottom: 2rem;">
+                    Ejemplos de Proyectos Metal Lab
+                </h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image">🏗️</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Estructura para Rooftop</h3>
+                            <p class="gallery-text">Estructura de soporte para carpa en terraza. Diseño sísmico-resistente.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">🎨</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Escultura Corporativa</h3>
+                            <p class="gallery-text">Logo de empresa en metal 3D para lobby. Acero inoxidable pulido con iluminación LED.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">🚴</div>
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Rack para Bicicletas Custom</h3>
+                            <p class="gallery-text">Sistema de almacenamiento vertical para 8 bicis en apartamento pequeño.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="#contacto" class="btn btn-secondary btn-large">Contar mi Idea</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Metal Concept -->
+    <section id="concepto" style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a);">
+        <div class="container">
+            <h2 class="section-title">No vendemos solo metal, vendemos conceptos</h2>
+            
+            <div class="concept-columns">
+                <div class="concept-item">
+                    <div class="concept-icon">📐</div>
+                    <h3 class="concept-title">Diseño</h3>
+                    <p class="concept-description">
+                        Te ayudamos a definir la pieza: medidas, uso real, estética y viabilidad en metal.
+                    </p>
+                </div>
+
+                <div class="concept-item">
+                    <div class="concept-icon">⚙️</div>
+                    <h3 class="concept-title">Fabricación</h3>
+                    <p class="concept-description">
+                        Corte, soldadura, doblez y acabados profesionales para que el resultado sea sólido y duradero.
+                    </p>
+                </div>
+
+                <div class="concept-item">
+                    <div class="concept-icon">✨</div>
+                    <h3 class="concept-title">Función & Estética</h3>
+                    <p class="concept-description">
+                        Piezas que se ven bien y se usan de verdad: pensadas para el día a día.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos Destacados -->
+    <section id="proyectos">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <p class="section-subtitle">Una muestra de lo que creamos en Steel Precision</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="motos">Motos</button>
+                <button class="filter-btn" data-filter="casa">Casa</button>
+                <button class="filter-btn" data-filter="4x4">4x4</button>
+                <button class="filter-btn" data-filter="metal-lab">Metal Lab</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="project-card" data-category="motos">
+                    <div class="project-image">🏍️</div>
+                    <div class="project-content">
+                        <span class="project-tag">Motos</span>
+                        <h3 class="project-title">Peto Custom Scrambler</h3>
+                        <p class="gallery-text">Peto en acero inoxidable con diseño personalizado, montaje universal.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="casa">
+                    <div class="project-image">🏠</div>
+                    <div class="project-content">
+                        <span class="project-tag">Casa</span>
+                        <h3 class="project-title">Celosía Geométrica</h3>
+                        <p class="gallery-text">Celosía decorativa en hierro con patrón hexagonal para ventana principal.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="4x4">
+                    <div class="project-image">🚙</div>
+                    <div class="project-content">
+                        <span class="project-tag">4x4</span>
+                        <h3 class="project-title">Peto Frontal Hilux</h3>
+                        <p class="gallery-text">Peto frontal reforzado en tubo de acero, acabado negro mate.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="motos">
+                    <div class="project-image">📱</div>
+                    <div class="project-content">
+                        <span class="project-tag">Motos</span>
+                        <h3 class="project-title">Tablero con Cargador USB</h3>
+                        <p class="gallery-text">Tablero metálico integrado con doble puerto USB y voltímetro digital.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="casa">
+                    <div class="project-image">🪑</div>
+                    <div class="project-content">
+                        <span class="project-tag">Casa</span>
+                        <h3 class="project-title">Mesa Industrial</h3>
+                        <p class="gallery-text">Mesa con estructura en hierro negro y tapa de madera recuperada.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="4x4">
+                    <div class="project-image">📦</div>
+                    <div class="project-content">
+                        <span class="project-tag">4x4</span>
+                        <h3 class="project-title">Parrilla Roof Rack</h3>
+                        <p class="gallery-text">Parrilla modular para techo con sistema de rieles y anclajes reforzados.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="metal-lab">
+                    <div class="project-image">🔧</div>
+                    <div class="project-content">
+                        <span class="project-tag">Metal Lab</span>
+                        <h3 class="project-title">Estructura para Rooftop</h3>
+                        <p class="gallery-text">Estructura de soporte en acero para instalación de carpa en terraza.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="casa">
+                    <div class="project-image">❄️</div>
+                    <div class="project-content">
+                        <span class="project-tag">Casa</span>
+                        <h3 class="project-title">Protector AC</h3>
+                        <p class="gallery-text">Protector ventilado en acero con diseño de rejilla, acabado anticorrosivo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre -->
+    <section id="sobre" style="background: linear-gradient(135deg, #0a0a0a, #1a1a1a);">
+        <div class="container">
+            <h2 class="section-title">Sobre Steel Precision</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem;">
+                <div>
+                    <p style="font-size: 1.2rem; color: var(--color-metal-bright); line-height: 1.9; margin-bottom: 1.5rem;">
+                        <strong style="color: var(--color-accent-orange);">Steel Precision es un taller donde se juntan tres elementos fundamentales:</strong> 
+                        la idea del cliente, el metal como material y la precisión en cada detalle.
+                    </p>
+                    <p style="font-size: 1.15rem; color: var(--color-metal-bright); line-height: 1.9; margin-bottom: 1.5rem;">
+                        Trabajamos bajo pedido, ya sea desarrollando diseños propios o materializando 
+                        las ideas que nuestros clientes traen. No hacemos producción en serie: cada pieza 
+                        es única y pensada para su función específica.
+                    </p>
+                    <p style="font-size: 1.15rem; color: var(--color-metal-bright); line-height: 1.9;">
+                        Desde accesorios para motos hasta mobiliario para el hogar, pasando por equipamiento 
+                        4x4 y proyectos completamente personalizados, nuestro enfoque es siempre el mismo: 
+                        <strong style="color: var(--color-accent-orange);">diseño + función + estética</strong>.
+                    </p>
+                </div>
+                <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--color-steel), var(--color-metal-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 5rem;">
+                    🏭
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proceso -->
+    <section id="proceso">
+        <div class="container">
+            <h2 class="section-title">Cómo Trabajamos</h2>
+            <p class="section-subtitle">Proceso simple en 3 pasos</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Cuenta tu idea</h3>
+                    <p class="step-description">
+                        Envíanos tu idea, foto de referencia o boceto. Entre más detalles, mejor. Puedes hacerlo por WhatsApp, mensaje o formulario.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Propuesta & Precio</h3>
+                    <p class="step-description">
+                        Te enviamos un diseño preliminar, especificaciones técnicas y cotización detallada.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Fabricación & Entrega</h3>
+                    <p class="step-description">
+                        Fabricamos tu pieza con precisión y la entregamos o instalamos según el caso.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="https://wa.me/584121234567" target="_blank" class="btn btn-primary btn-large" style="padding: 1.3rem 3rem; font-size: 1.3rem;">
+                    💬 Cotizar por WhatsApp
+                </a>
+                <p style="color: var(--color-metal-bright); margin-top: 1.5rem; font-size: 1.1rem;">
+                    También puedes dejarnos tus datos en el formulario de contacto
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" style="background: linear-gradient(135deg, #1a1a1a, #0a0a0a);">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">Cuéntanos tu proyecto y te respondemos en máximo 48 horas</p>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre" class="form-label">Nombre completo *</label>
+                        <input type="text" id="nombre" class="form-input" placeholder="Tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="whatsapp" class="form-label">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" class="form-input" placeholder="+58 412 123 4567" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interes" class="form-label">Área de interés *</label>
+                        <select id="interes" class="form-select" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="motos">Motos & Riding Gear</option>
+                            <option value="casa">Casa & Deco Metálica</option>
+                            <option value="4x4">4x4 & Pickups</option>
+                            <option value="metal-lab">Metal Lab (Proyecto a medida)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje" class="form-label">Mensaje *</label>
+                        <textarea id="mensaje" class="form-textarea" placeholder="Cuéntanos qué necesitas, para qué lo vas a usar, medidas aproximadas, etc." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.2rem; padding: 1.2rem;">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">STEEL PRECISION</div>
+                <p class="footer-tagline">Metal Concept, diseño y fabricación a medida.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com" target="_blank" class="social-icon">📷</a>
+                    <a href="https://facebook.com" target="_blank" class="social-icon">📘</a>
+                    <a href="https://wa.me/584121234567" target="_blank" class="social-icon">💬</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-section-title">Contacto</h4>
+                <div class="footer-contact">
+                    <p><strong>WhatsApp:</strong> +58 412 123 4567</p>
+                    <p><strong>Ciudad:</strong> Bogotá, Colombia</p>
+                    <p><strong>Email:</strong> contacto@steelprecision.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Steel Precision. Todos los derechos reservados. Metal Concept & Fabricación a Medida.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/584121234567" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        💬
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Parallax effect on hero
+            const heroBackground = document.getElementById('heroBackground');
+            if (heroBackground) {
+                const scrolled = window.pageYOffset;
+                heroBackground.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+            }
+            
+            // Reveal animations
+            revealOnScroll();
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.gallery-item, .concept-item, .card');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('reveal');
+                }
+            });
+        }
+
+        // Project filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'todos') {
+                        card.classList.remove('hidden');
+                    } else {
+                        if (card.getAttribute('data-category') === filterValue) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const email = document.getElementById('email').value;
+            const interes = document.getElementById('interes').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `¡Hola! Me gustaría recibir información sobre Steel Precision:
+
+*Nombre:* ${nombre}
+*WhatsApp:* ${whatsapp}
+${email ? `*Email:* ${email}` : ''}
+*Área de interés:* ${interes}
+
+*Mensaje:*
+${mensaje}`;
+
+            const whatsappURL = `https://wa.me/584121234567?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
+            contactForm.reset();
+            
+            alert('¡Gracias! Te estamos redirigiendo a WhatsApp para completar tu consulta.');
+        });
+
+        // Initial reveal on page load
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>
