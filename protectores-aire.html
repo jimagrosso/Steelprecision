@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de Protectores de Aire Acondicionado - Steel Precision. 3 modelos disponibles en múltiples acabados.">
+    <title>Protectores de Aire Acondicionado | Steel Precision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === VARIABLES === */
+        :root {
+            --color-dark-bg: #0a0a0a;
+            --color-graphite: #1a1a1a;
+            --color-steel: #2a2a2a;
+            --color-metal-light: #4a4a4a;
+            --color-metal-bright: #6a6a6a;
+            --color-accent-orange: #ff6b35;
+            --color-accent-blue: #00d4ff;
+            --font-display: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-dark-bg);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        /* === HEADER === */
+        .header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 1.5rem 2rem;
+            border-bottom: 2px solid var(--color-accent-orange);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--color-metal-bright);
+            letter-spacing: 1px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: #25D366;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* === HERO === */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(26, 26, 26, 0.75) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--color-metal-bright);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* === CONTAINER === */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* === SECTION TITLE === */
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--color-metal-bright);
+            margin-bottom: 3rem;
+        }
+        
+        /* === MODELS GRID === */
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+        
+        .model-card {
+            background: linear-gradient(135deg, var(--color-graphite), var(--color-steel));
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--color-metal-light);
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-accent-orange);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .model-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background: var(--color-steel);
+        }
+        
+        .model-content {
+            padding: 2rem;
+        }
+        
+        .model-name {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .model-description {
+            color: var(--color-metal-bright);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .colors-available {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.95rem;
+            color: var(--color-metal-bright);
+        }
+        
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--color-metal-light);
+        }
+        
+        .btn-ver-colores {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--color-accent-orange), #ffa500);
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-ver-colores:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* === GALLERY SECTION === */
+        .gallery-section {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            padding: 5rem 2rem;
+            margin-top: 3rem;
+        }
+        
+        .model-gallery {
+            max-width: 1400px;
+            margin: 0 auto 5rem;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .gallery-title {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--color-accent-orange);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .gallery-subtitle {
+            color: var(--color-metal-bright);
+            font-size: 1.1rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            background: var(--color-graphite);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-metal-light);
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            border-color: var(--color-accent-orange);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* === CTA SECTION === */
+        .cta-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--color-graphite), var(--color-steel));
+        }
+        
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-text {
+            font-size: 1.3rem;
+            color: var(--color-metal-bright);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            padding: 1.2rem 2.5rem;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+        }
+        
+        .btn-secondary {
+            padding: 1.2rem 2.5rem;
+            background: transparent;
+            color: #fff;
+            border: 2px solid var(--color-accent-blue);
+            border-radius: 6px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-accent-blue);
+            color: #000;
+            transform: translateY(-3px);
+        }
+        
+        /* === FOOTER === */
+        .footer {
+            background: var(--color-dark-bg);
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid var(--color-accent-orange);
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--color-accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-text {
+            color: var(--color-metal-bright);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        
+        /* === LIGHTBOX === */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(255, 107, 53, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: var(--color-accent-orange);
+            transform: scale(1.1);
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .models-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .whatsapp-btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div>
+                <div class="logo-text">STEEL PRECISION</div>
+                <div class="logo-subtitle">Protectores de Aire Acondicionado</div>
+            </div>
+            <a href="https://wa.me/573001234567" class="whatsapp-btn" target="_blank">
+                💬 Cotizar por WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033837/CCDF8492-96BA-4841-A624-84EDE4D22ADB_z2lmsj.png" alt="Protector de Aire Acondicionado" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Protectores de Aire Acondicionado</h1>
+            <p class="hero-subtitle">Diseño, Protección y Estilo</p>
+            <p class="hero-description">
+                3 modelos exclusivos disponibles en múltiples acabados. 
+                Protección ventilada en acero de alta calidad con acabado anticorrosivo.
+            </p>
+        </div>
+    </section>
+
+    <!-- Modelos Principales -->
+    <div class="container">
+        <h2 class="section-title">Nuestros Modelos</h2>
+        <p class="section-subtitle">Elige el diseño que mejor se adapte a tu estilo</p>
+        
+        <div class="models-grid">
+            <!-- Modelo Triángulos -->
+            <div class="model-card" onclick="scrollToGallery('triangulos')">
+                <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033837/CCDF8492-96BA-4841-A624-84EDE4D22ADB_z2lmsj.png" alt="Modelo Triángulos" class="model-image">
+                <div class="model-content">
+                    <h3 class="model-name">Modelo Triángulos</h3>
+                    <p class="model-description">
+                        Diseño geométrico moderno con patrón de triángulos. 
+                        Máxima ventilación y estilo contemporáneo.
+                    </p>
+                    <div class="colors-available">
+                        <span>Disponible en 3 acabados:</span>
+                        <div class="color-dot" style="background: #2a2a2a;"></div>
+                        <div class="color-dot" style="background: #4a4a4a;"></div>
+                        <div class="color-dot" style="background: #6a6a6a;"></div>
+                    </div>
+                    <button class="btn-ver-colores">Ver todos los acabados</button>
+                </div>
+            </div>
+
+            <!-- Modelo Bosque -->
+            <div class="model-card" onclick="scrollToGallery('bosque')">
+                <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033834/C078AF0B-6123-4F7B-ABB3-F66272F2647A_cmadei.png" alt="Modelo Bosque" class="model-image">
+                <div class="model-content">
+                    <h3 class="model-name">Modelo Bosque</h3>
+                    <p class="model-description">
+                        Patrón orgánico inspirado en naturaleza. 
+                        Diseño único que combina funcionalidad y arte.
+                    </p>
+                    <div class="colors-available">
+                        <span>Disponible en 3 acabados:</span>
+                        <div class="color-dot" style="background: #2a2a2a;"></div>
+                        <div class="color-dot" style="background: #4a4a4a;"></div>
+                        <div class="color-dot" style="background: #6a6a6a;"></div>
+                    </div>
+                    <button class="btn-ver-colores">Ver todos los acabados</button>
+                </div>
+            </div>
+
+            <!-- Modelo Industrial LOV -->
+            <div class="model-card" onclick="scrollToGallery('industrial')">
+                <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033831/9DF0BBA6-D969-4CF0-8615-32CAFE3FC410_pegpuz.png" alt="Modelo Industrial LOV" class="model-image">
+                <div class="model-content">
+                    <h3 class="model-name">Modelo Industrial LOV</h3>
+                    <p class="model-description">
+                        Estilo industrial con líneas limpias y diseño minimalista. 
+                        Perfecto para espacios modernos.
+                    </p>
+                    <div class="colors-available">
+                        <span>Disponible en 3 acabados:</span>
+                        <div class="color-dot" style="background: #2a2a2a;"></div>
+                        <div class="color-dot" style="background: #4a4a4a;"></div>
+                        <div class="color-dot" style="background: #6a6a6a;"></div>
+                    </div>
+                    <button class="btn-ver-colores">Ver todos los acabados</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Galería Completa -->
+    <section class="gallery-section">
+        <!-- Modelo Triángulos -->
+        <div class="model-gallery" id="triangulos">
+            <div class="gallery-header">
+                <h3 class="gallery-title">Modelo Triángulos</h3>
+                <p class="gallery-subtitle">3 acabados disponibles - Click en la imagen para ampliar</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033837/CCDF8492-96BA-4841-A624-84EDE4D22ADB_z2lmsj.png" alt="Triángulos - Acabado 1">
+                    <div class="gallery-label">Acabado 1</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033832/C2B41D7F-F8AC-4ECC-8811-F2EF5B48133B_rfgcuw.png" alt="Triángulos - Acabado 2">
+                    <div class="gallery-label">Acabado 2</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033829/6C6CF97D-2869-489C-BBB0-9C87D611CDE7_aqbisg.png" alt="Triángulos - Acabado 3">
+                    <div class="gallery-label">Acabado 3</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modelo Bosque -->
+        <div class="model-gallery" id="bosque">
+            <div class="gallery-header">
+                <h3 class="gallery-title">Modelo Bosque</h3>
+                <p class="gallery-subtitle">3 acabados disponibles - Click en la imagen para ampliar</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033834/C078AF0B-6123-4F7B-ABB3-F66272F2647A_cmadei.png" alt="Bosque - Acabado 1">
+                    <div class="gallery-label">Acabado 1</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033830/18D7DEE0-DFC8-4F13-823A-CDE8B029D1A0_r74krz.png" alt="Bosque - Acabado 2">
+                    <div class="gallery-label">Acabado 2</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033824/6E2F70F3-890F-483D-9394-0C47781854E7_azs4jx.png" alt="Bosque - Acabado 3">
+                    <div class="gallery-label">Acabado 3</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modelo Industrial LOV -->
+        <div class="model-gallery" id="industrial">
+            <div class="gallery-header">
+                <h3 class="gallery-title">Modelo Industrial LOV</h3>
+                <p class="gallery-subtitle">3 acabados disponibles - Click en la imagen para ampliar</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033831/9DF0BBA6-D969-4CF0-8615-32CAFE3FC410_pegpuz.png" alt="Industrial LOV - Acabado 1">
+                    <div class="gallery-label">Acabado 1</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033824/A578BEC0-4BEE-4C49-AA50-9CC5EEFCF87A_dkcgt7.png" alt="Industrial LOV - Acabado 2">
+                    <div class="gallery-label">Acabado 2</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1776033830/78652079-6466-4188-AA82-1EFEB7E2FCF5_awerrd.png" alt="Industrial LOV - Acabado 3">
+                    <div class="gallery-label">Acabado 3</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="cta-title">¿Te interesa algún modelo?</h2>
+        <p class="cta-text">
+            Contáctanos para cotizar, conocer medidas exactas y tiempos de entrega. 
+            También fabricamos a medida según tus necesidades.
+        </p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/573001234567?text=Hola%2C%20me%20interesa%20cotizar%20un%20protector%20de%20aire%20acondicionado" class="btn-primary" target="_blank">
+                💬 Cotizar por WhatsApp
+            </a>
+            <a href="index.html" class="btn-secondary">
+                Ver más productos Steel Precision
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">STEEL PRECISION</div>
+        <p class="footer-tagline">Metal Concept, diseño y fabricación a medida</p>
+        <div class="footer-contact">
+            <p>📱 WhatsApp: +57 300 123 4567</p>
+            <p>📧 contacto@steelprecision.com</p>
+            <p>📍 Bogotá, Colombia</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">×</span>
+        <img src="" alt="Imagen ampliada" id="lightbox-img">
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll suave a galería
+        function scrollToGallery(modelId) {
+            document.getElementById(modelId).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Lightbox
+        function openLightbox(element) {
+            event.stopPropagation();
+            const img = element.querySelector('img');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Cerrar lightbox con ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
