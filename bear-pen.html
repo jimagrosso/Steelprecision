@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bear Pen - Bolígrafo innovador con envío gratis. Compra ahora por WhatsApp.">
+    <title>Bear Pen - Compra Ahora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #0f0f0f;
+            --color-surface: #1a1a1a;
+            --color-border: #2a2a2a;
+            --color-text: #e5e5e5;
+            --color-text-muted: #999999;
+            --color-accent: #ff6b35;
+            --color-whatsapp: #25D366;
+            --color-whatsapp-hover: #20BA5A;
+            --color-ml: #FFE600;
+            
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* === HERO SECTION === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text {
+            z-index: 2;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(37, 211, 102, 0.1);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 30px;
+            color: var(--color-whatsapp);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-accent), #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .price-box {
+            background: var(--color-surface);
+            border: 2px solid var(--color-accent);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .price-label {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .price-options {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .price-option {
+            text-align: center;
+        }
+        
+        .quantity {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        
+        .price-note {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+        
+        .price-divider {
+            font-size: 2rem;
+            color: var(--color-text-muted);
+            font-weight: 300;
+        }
+        
+        .free-shipping {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, var(--color-whatsapp), #20BA5A);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulse-shipping 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-shipping {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* === BUTTONS === */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 1.3rem 2.5rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: var(--font-body);
+        }
+        
+        .btn-whatsapp {
+            background: var(--color-whatsapp);
+            color: white;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .btn-whatsapp:hover {
+            background: var(--color-whatsapp-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn-mercadolibre {
+            background: var(--color-ml);
+            color: #333;
+            box-shadow: 0 8px 30px rgba(255, 230, 0, 0.2);
+        }
+        
+        .btn-mercadolibre:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(255, 230, 0, 0.3);
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+            }
+            50% {
+                box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
+            }
+        }
+        
+        .btn-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* === PRODUCT IMAGE === */
+        .hero-image {
+            position: relative;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* === FEATURES SECTION === */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--color-surface);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            margin-bottom: 4rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-description {
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+        
+        /* === GALLERY === */
+        .gallery {
+            padding: 6rem 2rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* === MERCADO LIBRE SECTION === */
+        .mercadolibre-section {
+            padding: 6rem 2rem;
+            background: var(--color-surface);
+        }
+        
+        .ml-banner {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+        
+        .ml-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* === CTA SECTION === */
+        .cta-section {
+            padding: 8rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(255, 165, 0, 0.05));
+        }
+        
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.3rem;
+            color: var(--color-text-muted);
+            margin-bottom: 3rem;
+        }
+        
+        /* === FOOTER === */
+        .footer {
+            padding: 3rem 2rem;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+        
+        .footer-cta {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-text {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .price {
+                font-size: 3rem;
+            }
+            
+            .price-options {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .price-divider {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .cta-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .price {
+                font-size: 2.5rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="badge">✨ Producto Premium</div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Bear Pen</span><br>
+                    El bolígrafo que necesitas
+                </h1>
+                <p class="hero-description">
+                    Diseño innovador, calidad superior y comodidad excepcional. El complemento perfecto para tu día a día.
+                </p>
+                
+                <div class="price-box">
+                    <div class="price-label">Precios Especiales</div>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <div class="quantity">1 unidad</div>
+                            <div class="price">$12</div>
+                            <div class="price-note">Tasa BCV</div>
+                        </div>
+                        <div class="price-divider">ó</div>
+                        <div class="price-option">
+                            <div class="quantity">2 unidades</div>
+                            <div class="price">$20</div>
+                            <div class="price-note">Tasa BCV</div>
+                        </div>
+                    </div>
+                    <div class="free-shipping">🚚 ENVÍO GRATIS A TODA VENEZUELA</div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="https://wa.me/584149796282?text=Hola,%20quiero%20comprar%20Bear%20Pen" 
+                       class="btn btn-whatsapp" 
+                       target="_blank">
+                        <span class="btn-icon">💬</span>
+                        Comprar por WhatsApp
+                    </a>
+                    
+                    <a href="#mercadolibre" 
+                       class="btn btn-mercadolibre">
+                        <span class="btn-icon">🛒</span>
+                        Comprar por Mercado Libre
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1779662829/IMG_5377_vulhqw.webp" 
+                     alt="Bear Pen - Producto Principal" 
+                     class="product-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir Bear Pen?</h2>
+            <p class="section-subtitle">Calidad y diseño en cada detalle</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3 class="feature-title">Escritura Suave</h3>
+                    <p class="feature-description">
+                        Tinta de alta calidad que fluye perfectamente para una experiencia de escritura excepcional.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3 class="feature-title">Diseño Ergonómico</h3>
+                    <p class="feature-description">
+                        Diseñado para largas jornadas de escritura sin fatiga. Perfecto para estudiantes y profesionales.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3 class="feature-title">Calidad Premium</h3>
+                    <p class="feature-description">
+                        Materiales de primera calidad que garantizan durabilidad y un acabado impecable.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="cta-buttons" style="justify-content: center;">
+                <a href="https://wa.me/584149796282?text=Hola,%20quiero%20comprar%20Bear%20Pen" 
+                   class="btn btn-whatsapp" 
+                   target="_blank">
+                    <span class="btn-icon">💬</span>
+                    Comprar por WhatsApp
+                </a>
+                
+                <a href="#mercadolibre" 
+                   class="btn btn-mercadolibre">
+                    <span class="btn-icon">🛒</span>
+                    Comprar por Mercado Libre
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galería de Producto</h2>
+            <p class="section-subtitle">Mira todos los detalles</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1779662829/IMG_5377_vulhqw.webp" 
+                         alt="Bear Pen - Vista 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1779662835/IMG_5378_l2jwy1.jpg" 
+                         alt="Bear Pen - Vista 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mercado Libre Section -->
+    <section class="mercadolibre-section" id="mercadolibre">
+        <div class="container">
+            <h2 class="section-title">También en Mercado Libre</h2>
+            <p class="section-subtitle">Próximamente disponible</p>
+            
+            <div class="ml-banner">
+                <!-- Reemplazar por link de Mercado Libre cuando esté disponible -->
+                <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1779663038/bannmer_mercadolibre_lndcaz.jpg" 
+                     alt="Disponible en Mercado Libre">
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">¿Listo para comprar tu Bear Pen?</h2>
+            <p class="cta-subtitle">
+                Envío gratis y atención personalizada por WhatsApp
+            </p>
+            
+            <div class="cta-buttons" style="justify-content: center;">
+                <a href="https://wa.me/584149796282?text=Hola,%20quiero%20comprar%20Bear%20Pen" 
+                   class="btn btn-whatsapp" 
+                   target="_blank">
+                    <span class="btn-icon">💬</span>
+                    Comprar por WhatsApp
+                </a>
+                
+                <a href="#mercadolibre" 
+                   class="btn btn-mercadolibre">
+                    <span class="btn-icon">🛒</span>
+                    Comprar por Mercado Libre
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-cta cta-buttons" style="justify-content: center;">
+                <a href="https://wa.me/584149796282?text=Hola,%20quiero%20comprar%20Bear%20Pen" 
+                   class="btn btn-whatsapp" 
+                   target="_blank">
+                    <span class="btn-icon">💬</span>
+                    Comprar por WhatsApp
+                </a>
+            </div>
+            <p class="footer-text">© 2024 Steel Precision | Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
