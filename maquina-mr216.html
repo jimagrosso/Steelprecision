@@ -99,6 +99,27 @@ p{margin:0}
 .panel-list li{display:flex;gap:10px}
 .panel-list b{font-family:var(--mono);font-size:.82rem;color:var(--ink);min-width:72px}
 
+/* GALERÍA DE USOS */
+.usos{background:var(--steel);color:#eef1f2}
+.usos .eyebrow{color:#9aa6ae}.usos .lead{color:#c4ccd2}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;margin-top:36px}
+.gal figure{margin:0;position:relative;overflow:hidden;border-radius:8px;background:#0c1013}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;inset:auto 0 0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(8,10,12,.88));color:#fff}
+.gal figcaption b{font-family:var(--display);font-size:1.45rem;font-weight:800;text-transform:uppercase;display:block;line-height:1}
+.gal figcaption span{font-size:.88rem;color:#d6dce0;display:block;margin-top:4px}
+.gal .big{grid-column:span 2;grid-row:span 2}
+.gal .big figcaption b{font-size:2rem}
+.gal .wide{grid-column:span 2}
+.gal-note{font-size:.8rem;color:#9aa6ae;margin-top:14px}
+.gal-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px}
+.gal-cta p{font-size:1.05rem;max-width:52ch}
+.gal-cta .btn{background:var(--yellow);color:#1b2126;border-color:var(--yellow)}
+@media (max-width:860px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.gal .big{grid-column:span 2;grid-row:span 2}}
+@media (max-width:480px){.gal{grid-template-columns:1fr;grid-auto-rows:220px}.gal .big,.gal .wide{grid-column:span 1;grid-row:span 1}}
+@media (prefers-reduced-motion:reduce){.gal img{transition:none}}
+
 /* PERFORMANCE */
 .perf{background:var(--steel);color:#eef1f2}
 .perf .eyebrow{color:#9aa6ae}
@@ -226,7 +247,28 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="usos" id="usos">
+  <div class="wrap">
+    <p class="eyebrow">Lo que puedes pintar</p>
+    <h2>Si es de metal, lo pintas</h2>
+    <p class="lead">Rines, motos, portones, muebles, tableros. Con la MR-216 ofreces acabados que tus clientes no consiguen con brocha ni con pistola de aire.</p>
+    <div class="gal">
+      <figure class="big"><img src="img/mr216/candy-rojo.webp" alt="Rin de carro pintado en candy rojo translúcido" loading="lazy"><figcaption><b>Rines candy</b><span>Color translúcido sobre base cromada. El trabajo que más se luce.</span></figcaption></figure>
+      <figure class="wide"><img src="img/mr216/antes-despues.webp" alt="Rin oxidado junto al mismo rin pintado en gris grafito" loading="lazy"><figcaption><b>Antes y después</b><span>Del óxido a un acabado como nuevo.</span></figcaption></figure>
+      <figure class=""><img src="img/mr216/rines-colores.webp" alt="Cuatro rines pintados en colores candy" loading="lazy"><figcaption><b>Cualquier color</b><span>Azul, verde, morado, naranja…</span></figcaption></figure>
+      <figure class=""><img src="img/mr216/rines-moto.webp" alt="Par de rines de moto pintados en candy azul" loading="lazy"><figcaption><b>Rines de moto</b><span>Rayos y aro en candy azul.</span></figcaption></figure>
+      <figure class="wide"><img src="img/mr216/piezas-moto.webp" alt="Basculante morado, tapas verdes y calipers dorados pintados" loading="lazy"><figcaption><b>Piezas de moto</b><span>Basculantes, tapas de motor, calipers.</span></figcaption></figure>
+      <figure class=""><img src="img/mr216/porton.webp" alt="Portón de hierro pintado en negro satinado" loading="lazy"><figcaption><b>Portones y rejas</b><span>Negro satinado parejo, sin chorreados.</span></figcaption></figure>
+      <figure class=""><img src="img/mr216/muebles.webp" alt="Sillas negras, mesa blanca y banco amarillo de metal" loading="lazy"><figcaption><b>Muebles de metal</b><span>Sillas, mesas, bancos.</span></figcaption></figure>
+      <figure class="wide"><img src="img/mr216/tableros.webp" alt="Fila de tableros eléctricos pintados en gris" loading="lazy"><figcaption><b>Tableros eléctricos</b><span>Gris industrial texturizado.</span></figcaption></figure>
+      <figure class="wide"><img src="img/mr216/gimnasio.webp" alt="Rack de pesas y estantes pintados en rojo y negro" loading="lazy"><figcaption><b>Equipos de gimnasio</b><span>Racks, estantes y bancos.</span></figcaption></figure>
+    </div>
+    <p class="gal-note">Imágenes ilustrativas de acabados con pintura en polvo.</p>
+    <div class="gal-cta"><p>Cada uno de estos trabajos es un servicio que puedes cobrar desde la primera semana.</p><a class="btn" href="#rendimiento">Ver cuánto cuesta pintar</a></div>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <p class="eyebrow">Qué trae el equipo</p>
     <h2>Lo que recibes</h2>
