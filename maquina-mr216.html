@@ -226,6 +226,9 @@ footer{padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
 @media (min-width:860px){.vfgrid{grid-template-columns:1fr 1fr;align-items:stretch}.vfin.tall{height:100%}.vfin.tall img{aspect-ratio:auto;height:100%}}
 @media (prefers-reduced-motion:reduce){.vlive i{animation:none}.viewer img{transition:none}}
 
+.vworks{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
+.vworks .vfin img{aspect-ratio:4/4.4}
+@media (min-width:760px){.vworks{grid-template-columns:1fr 1fr}}
 /* PERFORMANCE */
 .perf{background:var(--steel);color:#eef1f2}
 .perf .eyebrow{color:#9aa6ae}
@@ -386,6 +389,18 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
     </div>
     <div class="uses" aria-label="Usos">
       <span>Rejas y portones</span><span>Estructuras metálicas</span><span>Muebles de metal</span><span>Rines y piezas de moto</span><span>Estantes y anaqueles</span><span>Tableros eléctricos</span><span>Herrería decorativa</span>
+    </div>
+  </div>
+</section>
+
+<section class="vtrab" id="trabajos">
+  <div class="wrap">
+    <p class="eyebrow">Trabajos reales</p>
+    <h2>Hechos con pintura en polvo</h2>
+    <p class="lead">Así quedan las piezas después del horno: color parejo, brillo de fábrica y resistentes a golpes y al sol.</p>
+    <div class="vworks">
+      <figure class="vfin"><span class="vreal">Real</span><img src="https://res.cloudinary.com/dzq9lldhw/image/upload/f_auto,q_auto,w_900/v1793216575/trabajo-rines_tzj8aw.jpg" alt="Aros de moto pintados en morado candy, azul, negro, blanco y rojo" loading="lazy"><figcaption><b>Aros de moto</b><span>Morado y azul candy, negro, blanco y rojo.</span></figcaption></figure>
+      <figure class="vfin"><span class="vreal">Real</span><img src="https://res.cloudinary.com/dzq9lldhw/image/upload/f_auto,q_auto,w_900/v1793216581/trabajo-piezas_gfydnm.jpg" alt="Piezas de lámina cortadas y pintadas en azul, blanco, rojo y negro" loading="lazy"><figcaption><b>Piezas cortadas</b><span>Lámina pintada en azul, blanco, rojo y negro.</span></figcaption></figure>
     </div>
   </div>
 </section>
