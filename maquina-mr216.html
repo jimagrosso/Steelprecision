@@ -229,6 +229,10 @@ footer{padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
 .vworks{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
 .vworks .vfin img{aspect-ratio:4/4.4}
 @media (min-width:760px){.vworks{grid-template-columns:1fr 1fr}}
+.vplay{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);z-index:2;display:none;align-items:center;gap:10px;background:rgba(245,184,0,.95);color:#14191d;border:0;border-radius:999px;padding:14px 22px 14px 16px;font-family:var(--body);font-weight:800;font-size:1rem;box-shadow:0 10px 30px rgba(0,0,0,.45);cursor:pointer}
+.vplay svg{flex:none}
+.vhero.blocked .vplay{display:inline-flex}
+
 /* PERFORMANCE */
 .perf{background:var(--steel);color:#eef1f2}
 .perf .eyebrow{color:#9aa6ae}
@@ -310,7 +314,8 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
 
 <div class="topbar"><div class="wrap"><span>Factura fiscal · 12 meses de garantía</span><span class="links"><a href="https://wa.me/584149796282?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20la%20m%C3%A1quina%20MR-216" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/><path fill="currentColor" d="M8 10h2v2H8zm3 0h2v2h-2zm3 0h2v2h-2z"/></svg> 0414-979.62.82</a><a href="https://articulo.mercadolibre.com.ve/MLV-972578678-maquina-de-pintura-electrostatica-_JM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm4 0V6a3 3 0 0 1 6 0v2"/></svg> Ver en Mercado Libre</a></span></div></div>
 <header class="vhero">
-  <video id="vvid" autoplay muted loop playsinline preload="metadata" poster="https://res.cloudinary.com/dzq9lldhw/image/upload/v1793215962/mr216-pintando-poster_jic8yh.jpg" aria-label="Video de la MR-216 pintando una lámina de metal"><source src="https://res.cloudinary.com/dzq9lldhw/video/upload/v1793215963/mr216-pintando_ixygrn.mp4" type="video/mp4"></video>
+  <video id="vvid" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="https://res.cloudinary.com/dzq9lldhw/image/upload/v1793215962/mr216-pintando-poster_jic8yh.jpg" aria-label="Video de la MR-216 pintando una lámina de metal"><source src="https://res.cloudinary.com/dzq9lldhw/video/upload/v1793215963/mr216-pintando_ixygrn.mp4" type="video/mp4"></video>
+  <button class="vplay" id="vplay" type="button"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#14191d"/><path d="M10 8l6 4-6 4z" fill="#f5b800"/></svg>Ver video</button>
   <span class="vlive"><i></i>Video real · MR-216 en acción</span>
   <a class="home" href="index.html">← Steel Precision</a>
   <div class="vkv" aria-hidden="true"><b id="vkv">95</b><small>kV</small></div>
@@ -632,7 +637,20 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
 (function(){
   var kv=document.getElementById('vkv'),vid=document.getElementById('vvid');
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(vid){ if(!reduce) setInterval(function(){ if(!vid.paused) kv.textContent=String(90+Math.floor(Math.random()*10)); },220); var p=vid.play&&vid.play(); if(p&&p.catch)p.catch(function(){}); }
+  if(vid){
+    var hero=vid.closest('.vhero'), btn=document.getElementById('vplay');
+    vid.muted=true; vid.defaultMuted=true; vid.playsInline=true; vid.setAttribute('muted','');
+    function tryPlay(){ var p=vid.play(); if(p&&p.then){ p.then(function(){hero.classList.remove('blocked')}).catch(function(){hero.classList.add('blocked')}); } }
+    function kick(){ tryPlay(); }
+    ['touchstart','click','scroll','keydown'].forEach(function(t){ window.addEventListener(t,kick,{once:true,passive:true}); });
+    if(btn) btn.addEventListener('click',function(e){ e.stopPropagation(); tryPlay(); });
+    vid.addEventListener('playing',function(){ hero.classList.remove('blocked'); });
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting) tryPlay(); else vid.pause(); }); },{threshold:.25}).observe(vid); }
+    if(vid.readyState>=2) tryPlay(); else vid.addEventListener('loadeddata',tryPlay,{once:true});
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden) tryPlay(); });
+    setTimeout(function(){ if(vid.paused) hero.classList.add('blocked'); },2500);
+    if(!reduce) setInterval(function(){ if(!vid.paused) kv.textContent=String(90+Math.floor(Math.random()*10)); },220);
+  }
   var v=document.getElementById('viewer'); if(!v) return;
   var imgs=[].slice.call(v.querySelectorAll('img')),btns=[].slice.call(v.querySelectorAll('.vviews button')),i=0,x0=null,auto=!reduce;
   function show(n){ i=(n+imgs.length)%imgs.length; imgs.forEach(function(im,k){im.classList.toggle('on',k===i)}); btns.forEach(function(b,k){b.setAttribute('aria-pressed',String(k===i))}); }
