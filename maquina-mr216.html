@@ -145,6 +145,87 @@ p{margin:0}
 @media (max-width:860px){.ml-band .wrap{grid-template-columns:1fr}}
 footer{padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
 
+/* V2: PORTADA CON VIDEO */
+.vhero{position:relative;min-height:clamp(520px,80vh,700px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:#0e1215;color:#eef1f2}
+.vhero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.vhero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,18,21,.55) 0%,rgba(14,18,21,.05) 30%,rgba(14,18,21,.25) 55%,rgba(14,18,21,.96) 88%,#0e1215 100%)}
+.vhero .wrap{width:100%;padding-block:24px 28px}
+.vhero .home{position:absolute;top:58px;left:max(16px,env(safe-area-inset-left,0px));color:#fff;font-size:.85rem;font-weight:600;text-decoration:none;opacity:.85}
+.vlive{position:absolute;top:16px;left:max(16px,env(safe-area-inset-left,0px));display:inline-flex;gap:8px;align-items:center;background:rgba(10,13,16,.7);border:1px solid rgba(255,255,255,.18);color:#fff;font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.vlive i{width:8px;height:8px;border-radius:50%;background:#ff3b30;animation:vpulse 1.6s infinite}
+@keyframes vpulse{0%{box-shadow:0 0 0 0 rgba(255,59,48,.7)}70%{box-shadow:0 0 0 9px rgba(255,59,48,0)}100%{box-shadow:0 0 0 0 rgba(255,59,48,0)}}
+.vkv{position:absolute;top:16px;right:max(16px,env(safe-area-inset-right,0px));font-family:var(--mono);background:#0b0d0f;border:1px solid #3a1210;border-radius:6px;padding:6px 10px;text-align:right;line-height:1}
+.vkv b{display:block;color:#ff3b2a;font-size:1.5rem;text-shadow:0 0 10px rgba(255,59,42,.7);font-variant-numeric:tabular-nums}
+.vkv small{color:#9aa6ae;font-size:.62rem;letter-spacing:.1em}
+.vhero .eyebrow{color:#f5b800}
+.vhero h1{font-size:clamp(3rem,13vw,5.4rem);font-weight:900;text-transform:uppercase;line-height:.9}
+.vhero h1 em{font-style:normal;color:#f5b800}
+.vhero .vsub{color:#d6dce0;max-width:40ch;margin:12px 0 0;font-size:1.02rem}
+.vbuy{background:#0e1215;color:#eef1f2;padding-block:4px 32px}
+.vbuy .row{display:flex;gap:10px;flex-wrap:wrap}
+.vprice{background:#f5b800;color:#14191d;border-radius:8px;padding:12px 18px;display:flex;align-items:baseline;gap:10px}
+.vprice b{font-family:var(--display);font-size:2.6rem;font-weight:900;line-height:1}
+.vprice small{font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.vwar{border:1px solid #26303a;border-radius:8px;padding:10px 16px;display:flex;flex-direction:column;justify-content:center}
+.vwar b{font-family:var(--display);font-size:1.6rem;line-height:1}
+.vwar small{color:#9aa6ae;font-size:.82rem}
+.vctas{display:grid;gap:10px;margin-top:16px;max-width:460px}
+.vctas .btn{justify-content:center;border:0;padding:15px 20px;font-size:1.02rem}
+.vctas a.vcalc{color:#f5b800;font-weight:700;text-decoration:none;text-align:center;font-size:.95rem;padding:6px}
+@media (min-width:860px){.vhero{min-height:620px}.vctas{grid-template-columns:1fr 1fr}.vctas a.vcalc{grid-column:1/-1}}
+
+/* V2: FOTOS QUE SE DESLIZAN */
+.vmachine .vgrid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:26px}
+.viewer{position:relative;background:#f2f1ee;border:1px solid var(--line);border-radius:14px;aspect-ratio:1/1.08;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.viewer img{position:absolute;left:8%;top:6%;width:84%;height:80%;object-fit:contain;opacity:0;transform:scale(.96);transition:opacity .45s ease,transform .45s ease;pointer-events:none}
+.viewer img.on{opacity:1;transform:none}
+.viewer .vfloor{position:absolute;left:18%;right:18%;bottom:13%;height:18px;background:radial-gradient(closest-side,rgba(0,0,0,.25),transparent);pointer-events:none}
+.vviews{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px}
+.vviews button{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid #c9ccd0;background:#fff;color:#1b2126;padding:6px 10px;border-radius:999px;cursor:pointer}
+.vviews button[aria-pressed="true"]{background:#1b2126;color:#f5b800;border-color:#1b2126}
+.vdrag{position:absolute;top:12px;left:12px;font-size:.78rem;color:#5b6670;display:flex;gap:6px;align-items:center}
+.vspecs{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.vspec{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.vspec b{font-family:var(--display);font-size:1.8rem;display:block;line-height:1}
+.vspec span{font-size:.86rem;color:var(--muted)}
+.vspec.wide{grid-column:1/-1}
+@media (min-width:860px){.vmachine .vgrid{grid-template-columns:1.1fr .9fr;align-items:center}}
+
+/* V2: PANEL EXPLICADO */
+.vpanel{background:var(--steel);color:#eef1f2}
+.vpanel .eyebrow{color:#9aa6ae}.vpanel .lead{color:#c4ccd2}
+.vpanel figure{margin:26px 0 0;background:#fff;border-radius:12px;overflow:hidden}
+.vpanel figure img{width:100%;display:block}
+.vctrl{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:12px;counter-reset:c}
+.vctrl li{counter-increment:c;display:grid;grid-template-columns:34px 1fr;gap:12px;background:var(--steel-2);border-radius:10px;padding:14px}
+.vctrl li::before{content:counter(c);width:34px;height:34px;border-radius:50%;background:#f5b800;color:#14191d;font-family:var(--mono);font-weight:700;display:grid;place-items:center}
+.vctrl b{display:block;font-size:1.02rem}
+.vctrl span{font-size:.92rem;color:#c4ccd2}
+.vtip{margin-top:18px;border:1px dashed #4a5661;border-radius:10px;padding:14px 16px;font-size:.95rem;color:#c4ccd2}
+.vtip strong{color:#f5b800}
+@media (min-width:760px){.vctrl{grid-template-columns:1fr 1fr}}
+
+/* V2: ACABADOS Y TRABAJOS REALES */
+.vchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.vchip{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 6px;font-size:.88rem;font-weight:600}
+.vchip i{width:22px;height:22px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.sw-gloss{background:linear-gradient(135deg,#ff8a1f 0 45%,#ffd2a6 50%,#ff7a00 56%)}
+.sw-matte{background:#1c1e20}
+.sw-texture{background:radial-gradient(circle at 30% 30%,#3a3d40 0 2px,transparent 3px) 0 0/6px 6px,radial-gradient(circle at 70% 60%,#0c0d0e 0 2px,transparent 3px) 0 0/7px 7px,#202326}
+.sw-metal{background:linear-gradient(135deg,#8a6a1c,#e9c766 45%,#9b7a26 70%,#d8b75a)}
+.sw-candy{background:conic-gradient(#ffcf1a,#b01fd6,#13b36a,#1e4fe0,#c0102a,#ffcf1a)}
+.vfgrid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
+.vfcol{display:grid;gap:16px}
+.vfin{margin:0;border-radius:12px;overflow:hidden;position:relative;background:#0a0d10}
+.vfin img{width:100%;height:100%;display:block;object-fit:cover}
+.vfin.tall img{aspect-ratio:3/4}.vfin.short img{aspect-ratio:4/3}
+.vfin figcaption{position:absolute;inset:auto 0 0;padding:44px 16px 14px;background:linear-gradient(transparent,rgba(8,10,12,.9));color:#fff}
+.vfin figcaption b{font-family:var(--display);font-size:1.6rem;text-transform:uppercase;display:block;line-height:1}
+.vfin figcaption span{font-size:.88rem;color:#d6dce0}
+.vreal{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#f5b800;color:#14191d;padding:5px 9px;border-radius:4px}
+@media (min-width:860px){.vfgrid{grid-template-columns:1fr 1fr;align-items:stretch}.vfin.tall{height:100%}.vfin.tall img{aspect-ratio:auto;height:100%}}
+@media (prefers-reduced-motion:reduce){.vlive i{animation:none}.viewer img{transition:none}}
+
 /* PERFORMANCE */
 .perf{background:var(--steel);color:#eef1f2}
 .perf .eyebrow{color:#9aa6ae}
@@ -225,38 +306,73 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
 
 
 <div class="topbar"><div class="wrap"><span>Factura fiscal · 12 meses de garantía</span><span class="links"><a href="https://wa.me/584149796282?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20la%20m%C3%A1quina%20MR-216" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/><path fill="currentColor" d="M8 10h2v2H8zm3 0h2v2h-2zm3 0h2v2h-2z"/></svg> 0414-979.62.82</a><a href="https://articulo.mercadolibre.com.ve/MLV-972578678-maquina-de-pintura-electrostatica-_JM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm4 0V6a3 3 0 0 1 6 0v2"/></svg> Ver en Mercado Libre</a></span></div></div>
-<header class="hero">
+<header class="vhero">
+  <video id="vvid" autoplay muted loop playsinline preload="metadata" poster="https://res.cloudinary.com/dzq9lldhw/image/upload/v1793215962/mr216-pintando-poster_jic8yh.jpg" aria-label="Video de la MR-216 pintando una lámina de metal"><source src="https://res.cloudinary.com/dzq9lldhw/video/upload/v1793215963/mr216-pintando_ixygrn.mp4" type="video/mp4"></video>
+  <span class="vlive"><i></i>Video real · MR-216 en acción</span>
+  <a class="home" href="index.html">← Steel Precision</a>
+  <div class="vkv" aria-hidden="true"><b id="vkv">95</b><small>kV</small></div>
   <div class="wrap">
-    <div>
-      <a class="home" href="index.html">← Steel Precision</a><br>
-      <span class="badge">● Disponible en Venezuela</span>
-      <h1>MR-216<span>Pintura electrostática en polvo</span></h1>
-      <p class="sub">Acabados uniformes y resistentes en rejas, portones, estructuras y piezas metálicas. El equipo que convierte tu taller en un servicio de pintura profesional.</p>
-      <div class="price-row">
-        <div class="price"><small>Precio en divisas</small><b>$800</b><small>sin IVA</small></div>
-        <div class="warranty"><b>12 MESES</b><small>de garantía</small></div>
-      </div>
-      <div class="cta-row">
-        <a class="btn btn-wa" href="https://wa.me/584149796282?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20la%20m%C3%A1quina%20MR-216" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/><path fill="currentColor" d="M8 10h2v2H8zm3 0h2v2h-2zm3 0h2v2h-2z"/></svg> Pedir por WhatsApp</a>
-        <a class="btn btn-ghost" href="#rendimiento">Calcular cuánto rinde</a>
-        <a class="btn btn-ml" href="https://articulo.mercadolibre.com.ve/MLV-972578678-maquina-de-pintura-electrostatica-_JM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm4 0V6a3 3 0 0 1 6 0v2"/></svg> Comprar en Mercado Libre</a>
-      </div>
-    </div>
-    <div class="hero-img">
-      <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1792198863/mr2162_eqmkja.webp" alt="Máquina de pintura electrostática MR-216, vista frontal con panel de control y pistola">
-      <div class="kv-tag"><b>100 kV</b><small>ELECTROSTÁTICA</small></div>
-    </div>
+    <p class="eyebrow">Máquina de pintura electrostática en polvo</p>
+    <h1>Pinta como <em>fábrica</em> desde tu taller</h1>
+    <p class="vsub">La pintura se pega por carga eléctrica: cubre parejo, por los bordes y por detrás, sin chorreados.</p>
   </div>
 </header>
-
-<div class="strip">
-  <div class="wrap">
-    <div><b>220 V</b><span>Alimentación</span></div>
-    <div><b>100 kV</b><span>Carga electrostática</span></div>
-    <div><b>3 boquillas</b><span>Círculo, plana y cilindro</span></div>
-    <div><b>kV · µA</b><span>Pantallas digitales</span></div>
+<div class="vbuy"><div class="wrap">
+  <div class="row">
+    <div class="vprice"><b>$800</b><small>divisas · sin IVA</small></div>
+    <div class="vwar"><b>12 MESES</b><small>de garantía</small></div>
   </div>
-</div>
+  <div class="vctas">
+    <a class="btn btn-wa" href="https://wa.me/584149796282?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20la%20m%C3%A1quina%20MR-216" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/><path fill="currentColor" d="M8 10h2v2H8zm3 0h2v2h-2zm3 0h2v2h-2z"/></svg> Pedir por WhatsApp</a>
+    <a class="btn btn-ml" href="https://articulo.mercadolibre.com.ve/MLV-972578678-maquina-de-pintura-electrostatica-_JM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zm4 0V6a3 3 0 0 1 6 0v2"/></svg> Comprar en Mercado Libre</a>
+    <a class="vcalc" href="#rendimiento">Calcular cuánto rinde la pintura ↓</a>
+  </div>
+</div></div>
+
+
+<section class="vmachine">
+  <div class="wrap">
+    <p class="eyebrow">La máquina</p>
+    <h2>Mírala por todos lados</h2>
+    <div class="vgrid">
+      <div class="viewer" id="viewer" aria-label="Fotos de la MR-216. Desliza para cambiar de vista.">
+        <span class="vdrag"><svg width="30" height="12" viewBox="0 0 30 12" aria-hidden="true"><path d="M2 6h26M2 6l4-4M2 6l4 4M28 6l-4-4M28 6l-4 4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Desliza</span>
+        <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1793215962/model3d3_dkjpp4.webp" alt="MR-216 vista de tres cuartos" class="on">
+        <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1793215962/maquina-frente_x2s7os.jpg" alt="MR-216 vista de frente" loading="lazy">
+        <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1793215962/model3d2_submzq.webp" alt="MR-216 vista de atrás con la tolva de acero" loading="lazy">
+        <div class="vfloor"></div>
+        <div class="vviews" role="group" aria-label="Vistas"><button type="button" aria-pressed="true">Lado</button><button type="button" aria-pressed="false">Frente</button><button type="button" aria-pressed="false">Atrás</button></div>
+      </div>
+      <div class="vspecs">
+        <div class="vspec"><b>100 kV</b><span>Carga electrostática</span></div>
+        <div class="vspec"><b>220 V</b><span>Alimentación</span></div>
+        <div class="vspec"><b>3</b><span>Boquillas: círculo, plana y cilindro</span></div>
+        <div class="vspec"><b>kV · µA</b><span>Pantallas digitales</span></div>
+        <div class="vspec wide"><b>Incluye</b><span>Pistola, tolva de acero inoxidable, filtro de aire y agua, manguera y kit de repuestos.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vpanel" id="panel">
+  <div class="wrap">
+    <p class="eyebrow">Panel de control</p>
+    <h2>Para qué sirve cada perilla</h2>
+    <p class="lead">Todo se controla desde el frente de la máquina. Así se lee el panel, de izquierda a derecha.</p>
+    <figure><img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1792198863/mr2166_qpcqyf.webp" alt="Panel de control de la MR-216 con tres manómetros, perillas de aire, pantallas de kV y µA, perillas de voltaje y corriente e interruptor" loading="lazy"></figure>
+    <ol class="vctrl">
+      <li><div><b>Polvo (manómetro y perilla)</b><span>Cuánta pintura sale por la pistola. Más polvo cubre más rápido; demasiado deja la capa gruesa y desperdicia pintura.</span></div></li>
+      <li><div><b>Atomizado (manómetro y perilla)</b><span>Mezcla el polvo con aire para que la nube salga fina y pareja, sin escupir grumos.</span></div></li>
+      <li><div><b>Aire limpio (manómetro y perilla)</b><span>Sopla en la punta de la pistola para mantener limpio el electrodo y evitar que se acumule polvo.</span></div></li>
+      <li><div><b>Pantalla kV</b><span>Muestra el voltaje con el que se carga el polvo, hasta 100 kV. Es lo que hace que la pintura "abrace" la pieza.</span></div></li>
+      <li><div><b>Pantalla µA</b><span>Muestra la corriente. Si sube mucho, estás muy cerca de la pieza o la capa ya está cargada.</span></div></li>
+      <li><div><b>Perilla de voltaje</b><span>Alto para láminas y superficies planas; más bajo para rincones, esquinas y segundas capas.</span></div></li>
+      <li><div><b>Perilla de corriente</b><span>Limita la corriente para que el acabado quede liso y la pintura entre en zonas difíciles.</span></div></li>
+      <li><div><b>Interruptor de encendido</b><span>Enciende el equipo. Conecta antes el aire del compresor con el filtro de agua y aceite.</span></div></li>
+    </ol>
+    <p class="vtip"><strong>Consejo:</strong> como regla general, pinta a unos 15 a 25 cm de la pieza y con la pieza conectada a tierra. Con eso y el manual de configuración que entregamos con la máquina, arrancas sin complicaciones.</p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -270,6 +386,22 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
     </div>
     <div class="uses" aria-label="Usos">
       <span>Rejas y portones</span><span>Estructuras metálicas</span><span>Muebles de metal</span><span>Rines y piezas de moto</span><span>Estantes y anaqueles</span><span>Tableros eléctricos</span><span>Herrería decorativa</span>
+    </div>
+  </div>
+</section>
+
+<section class="vacab" id="acabados">
+  <div class="wrap">
+    <p class="eyebrow">Acabados</p>
+    <h2>Mucho más que un color</h2>
+    <p class="lead">Con la misma máquina cambias de acabado con solo cambiar el polvo. Cada efecto es un servicio distinto que le puedes ofrecer a tus clientes.</p>
+    <div class="vchips" aria-label="Tipos de acabado"><span class="vchip"><i class="sw-gloss"></i>Brillante</span><span class="vchip"><i class="sw-matte"></i>Mate</span><span class="vchip"><i class="sw-texture"></i>Texturizado</span><span class="vchip"><i class="sw-metal"></i>Metalizado</span><span class="vchip"><i class="sw-candy"></i>Candy translúcido</span></div>
+    <div class="vfgrid">
+      <figure class="vfin tall"><span class="vreal">Real</span><img src="https://res.cloudinary.com/dzq9lldhw/image/upload/f_auto,q_auto/v1793215984/acabado-candy_gqi2mu.jpg" alt="Muestras en candy translúcido: amarillo, morado, verde, negro humo, azul y rojo" loading="lazy"><figcaption><b>Candy translúcido</b><span>Color profundo con brillo de joya. El favorito para rines y motos.</span></figcaption></figure>
+      <div class="vfcol">
+        <figure class="vfin short"><span class="vreal">Real</span><img src="https://res.cloudinary.com/dzq9lldhw/image/upload/f_auto,q_auto/v1793215984/acabado-metalizado_imbwe1.jpg" alt="Muestras metalizadas: azul oscuro, plata, plata brillante, amarillo y dorados" loading="lazy"><figcaption><b>Metalizados</b><span>Dorados, platas y perlados con destello.</span></figcaption></figure>
+        <figure class="vfin short"><span class="vreal">Real</span><img src="https://res.cloudinary.com/dzq9lldhw/image/upload/f_auto,q_auto/v1793215984/acabado-muestrario_dqusq9.jpg" alt="Muestrario de colores: blancos, dorado, grises, negros mate, naranja, lila, rosado y negro texturizado" loading="lazy"><figcaption><b>Brillante, mate y texturizado</b><span>Del negro espejo al arrugado que disimula imperfecciones.</span></figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -300,19 +432,6 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
     <p class="eyebrow">Qué trae el equipo</p>
     <h2>Lo que recibes</h2>
     <div class="features">
-      <article class="feat wide">
-        <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1792198863/mr2166_qpcqyf.webp" alt="Panel de control de la MR-216 con manómetros, perillas de aire y pantallas de kV y µA">
-        <div class="txt">
-          <h3>Panel de control completo</h3>
-          <p>Controlas cada variable del pintado desde el frente de la máquina.</p>
-          <ul class="panel-list">
-            <li><b>Polvo</b>Cuánta pintura sale por la pistola</li>
-            <li><b>Atomizado</b>Qué tan fina y abierta sale la nube</li>
-            <li><b>Aire limpio</b>Mantiene la boquilla despejada</li>
-            <li><b>kV / µA</b>Voltaje y corriente con pantalla digital</li>
-          </ul>
-        </div>
-      </article>
       <article class="feat">
         <img src="https://res.cloudinary.com/dzq9lldhw/image/upload/v1792198863/mr2165_nwo4oh.webp" alt="Pistola amarilla de pintura electrostática con tres boquillas: círculo, plana y cilindro">
         <div class="txt"><h3>Pistola + 3 boquillas</h3><p>Boquilla de círculo para piezas grandes, plana para superficies lisas y cilindro para rincones y tubos.</p></div>
@@ -494,5 +613,20 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
 })();
 </script>
 
+<script>
+(function(){
+  var kv=document.getElementById('vkv'),vid=document.getElementById('vvid');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(vid){ if(!reduce) setInterval(function(){ if(!vid.paused) kv.textContent=String(90+Math.floor(Math.random()*10)); },220); var p=vid.play&&vid.play(); if(p&&p.catch)p.catch(function(){}); }
+  var v=document.getElementById('viewer'); if(!v) return;
+  var imgs=[].slice.call(v.querySelectorAll('img')),btns=[].slice.call(v.querySelectorAll('.vviews button')),i=0,x0=null,auto=!reduce;
+  function show(n){ i=(n+imgs.length)%imgs.length; imgs.forEach(function(im,k){im.classList.toggle('on',k===i)}); btns.forEach(function(b,k){b.setAttribute('aria-pressed',String(k===i))}); }
+  btns.forEach(function(b,k){b.addEventListener('click',function(){auto=false;show(k)})});
+  v.addEventListener('pointerdown',function(e){ if(e.target.closest('button'))return; x0=e.clientX; });
+  v.addEventListener('pointermove',function(e){ if(x0===null)return; var dx=e.clientX-x0; if(Math.abs(dx)>40){auto=false;show(i+(dx<0?1:-1));x0=e.clientX;} });
+  ['pointerup','pointercancel','pointerleave'].forEach(function(t){v.addEventListener(t,function(){x0=null})});
+  setInterval(function(){ if(auto) show(i+1); },2600);
+})();
+</script>
 </body>
 </html>
