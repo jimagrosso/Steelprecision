@@ -68,6 +68,54 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 .h1{font-size:48px}.h2{font-size:38px}
 .wa-float span{display:none}.wa-float{padding:16px}
 }
+
+/* ===== Móvil ===== */
+.m-hero,.m-bar{display:none}
+.m-hero{background:#0C0D0F;color:#FFFFFF}
+.m-img{position:relative;height:calc(100svh - 60px - 78px);min-height:440px;max-height:760px;overflow:hidden}
+.m-img img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block}
+.m-ov{position:absolute;left:0;right:0;bottom:0;padding:90px 16px 18px;background:linear-gradient(180deg,rgba(12,13,15,0) 0%,rgba(12,13,15,.78) 45%,#0C0D0F 100%);display:flex;flex-direction:column;gap:10px}
+.m-badge{align-self:flex-start;background:#D7261E;color:#FFFFFF;font-weight:700;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.m-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:46px;line-height:.95;text-transform:uppercase;margin:0}
+.m-title span{color:#FF4B42}
+.m-price{display:flex;align-items:baseline;gap:8px}
+.m-price b{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:40px;color:#FFFFFF}
+.m-price small{font-size:14px;font-weight:600;color:#C9CDD6}
+.m-body{padding:14px 16px 32px;display:flex;flex-direction:column;gap:12px}
+.m-body p{margin:0 0 4px;font-size:16px;line-height:1.5;color:#B9BDC6}
+.m-body .btn{width:100%}
+.m-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-top:6px;text-align:center}
+.m-stats div{background:#1A1B1F;border-radius:12px;padding:12px 4px}
+.m-stats b{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:24px}
+.m-stats span{font-size:12px;color:#A9ADB7}
+.m-bar{position:fixed;z-index:60;left:0;right:0;bottom:0;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(12,13,15,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid #24262C}
+.m-bar a{flex:1;min-height:52px;font-size:16px;padding:0 10px}
+@media (max-width:700px){
+.d-hero{display:none}
+.m-hero{display:block}
+.m-bar{display:flex}
+.wa-float{display:none!important}
+body{padding-bottom:80px}
+header nav{display:none!important}
+header .wrap{padding-top:12px!important;padding-bottom:12px!important;min-height:60px}
+header svg{width:26px;height:26px}
+.logo-t{font-size:22px!important}
+.ps{padding-top:52px!important;padding-bottom:52px!important}
+.banda{padding:28px 0 56px!important}
+.banda .cond{font-size:30px!important}
+.banda div{font-size:15px!important}
+.g4{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;margin-top:-34px!important}
+.card{padding:16px 14px;gap:6px}.card h3{font-size:20px}.card p{font-size:13px}
+#ejercicios .g3{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px}
+.ex{padding:14px;gap:4px}.ex .t{font-size:20px}.ex .d{font-size:13px}
+#instalada .g3{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}
+#instalada .g3::-webkit-scrollbar{display:none}
+#instalada figure{flex:0 0 80%;scroll-snap-align:center}
+.pcard{position:static!important;padding:28px 20px!important}
+#ficha figure{display:none}
+.lead{font-size:16px}
+.h2{font-size:34px!important}
+}
 </style>
 </head>
 <body>
@@ -77,7 +125,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px">
 <div style="display:flex;align-items:center;gap:12px">
 <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FF4B42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4M18 21V4M4 4h16M4 21h4M16 21h4M6 13h12"></path></svg>
-<span class="cond" style="font-weight:800;font-size:26px;letter-spacing:.5px">JAULA <span style="color:#FF4B42">MULTIFUNCIONAL</span></span>
+<span class="cond logo-t" style="font-weight:800;font-size:26px;letter-spacing:.5px">JAULA <span style="color:#FF4B42">MULTIFUNCIONAL</span></span>
 </div>
 <nav style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-weight:600;font-size:15px">
 <a href="#ejercicios" style="color:#FFFFFF;text-decoration:none">Ejercicios</a>
@@ -91,8 +139,26 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </div>
 </header>
 
+<!-- HERO MÓVIL -->
+<section class="m-hero">
+<div class="m-img">
+<img src="img/jaula/apartamento.webp" alt="Jaula multifuncional instalada en un apartamento con vista a la montaña" width="1100" height="1576" fetchpriority="high">
+<div class="m-ov">
+<span class="m-badge">Power rack · 100% acero</span>
+<p class="m-title">Tu gimnasio <span>completo</span><br>en casa</p>
+<div class="m-price"><b>$700</b><small>a tasa BCV · banco aparte</small></div>
+</div>
+</div>
+<div class="m-body">
+<p>Poleas, dominadas, fondos y remo en un solo equipo de acero. Entrena todo el cuerpo sin salir de casa.</p>
+<a class="btn btn-r" href="https://wa.me/584149796282?text=Hola%2C%20me%20interesa%20la%20jaula%20multifuncional" target="_blank" rel="noopener">La quiero: escribir por WhatsApp</a>
+<a class="btn btn-ml" href="https://articulo.mercadolibre.com.ve/MLV-781884083-power-rack-multifuncional-con-polea-barra-dominadas-_JM" target="_blank" rel="noopener">Comprar en Mercado Libre</a>
+<div class="m-stats"><div><b>500 kg</b><span>Capacidad</span></div><div><b>2,17 m</b><span>Altura</span></div><div><b>3 meses</b><span>Garantía</span></div></div>
+</div>
+</section>
+
 <!-- HERO -->
-<section style="background:#0C0D0F;color:#FFFFFF;padding:48px 0 84px">
+<section class="d-hero" style="background:#0C0D0F;color:#FFFFFF;padding:48px 0 84px">
 <div class="wrap hero">
 <div style="display:flex;flex-direction:column;gap:24px">
 <span style="align-self:flex-start;background:rgba(215,38,30,.18);color:#FF6B63;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px;border-radius:999px">Power rack · 100% acero</span>
@@ -115,7 +181,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- BANDA -->
-<section style="background:#D7261E;color:#FFFFFF;padding:40px 0 80px">
+<section class="banda" style="background:#D7261E;color:#FFFFFF;padding:40px 0 80px">
 <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;align-items:center">
 <div class="cond" style="font-weight:800;font-size:40px;line-height:1.02">Una sola inversión. Años de entrenamiento.</div>
 <div style="font-size:17px;line-height:1.6;color:#FFE3E1">Lo que pagas en unos meses de gimnasio te queda para siempre en tu casa: sin horarios, sin traslados y sin compartir equipos.</div>
@@ -152,7 +218,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- INSTALADA -->
-<section id="instalada" style="padding:16px 0 88px">
+<section class="ps" id="instalada" style="padding:16px 0 88px">
 <div class="wrap" style="display:flex;flex-direction:column;gap:32px">
 <div style="display:flex;flex-direction:column;gap:12px;max-width:720px">
 <span class="eyebrow">Así se ve instalada</span>
@@ -169,7 +235,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- EJERCICIOS -->
-<section id="ejercicios" style="background:#0C0D0F;color:#FFFFFF;padding:84px 0">
+<section class="ps" id="ejercicios" style="background:#0C0D0F;color:#FFFFFF;padding:84px 0">
 <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
 <div class="split">
 <div style="display:flex;flex-direction:column;gap:14px">
@@ -195,7 +261,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- DETALLES -->
-<section style="padding:88px 0">
+<section class="ps" style="padding:88px 0">
 <div class="wrap" style="display:flex;flex-direction:column;gap:36px">
 <div style="display:flex;flex-direction:column;gap:12px;max-width:720px">
 <span class="eyebrow">Detalles que se notan</span>
@@ -219,7 +285,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- INCLUYE + PRECIO -->
-<section id="incluye" style="background:#FFFFFF;padding:88px 0">
+<section class="ps" id="incluye" style="background:#FFFFFF;padding:88px 0">
 <div class="wrap split" style="align-items:start">
 <div style="display:flex;flex-direction:column;gap:24px">
 <span class="eyebrow">Qué trae la caja</span>
@@ -242,7 +308,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 <figure style="background:#F3F3F1"><img src="img/jaula/piezas.webp" alt="Piezas de la jaula desarmada: parales, barra de dominadas, poleas, manerales, ganchos y juntas" width="1080" height="410"></figure>
 </div>
 
-<div style="background:#0C0D0F;color:#FFFFFF;border-radius:20px;padding:40px 34px;display:flex;flex-direction:column;gap:22px;position:sticky;top:24px">
+<div style="background:#0C0D0F;color:#FFFFFF;border-radius:20px;padding:40px 34px;display:flex;flex-direction:column;gap:22px;position:sticky;top:24px" class="pcard">
 <span style="align-self:flex-start;background:#D7261E;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:999px">Precio a tasa BCV</span>
 <div class="cond" style="font-weight:700;font-size:32px">Jaula Multifuncional completa</div>
 <div style="display:flex;align-items:baseline;gap:10px"><span class="cond" style="font-weight:800;font-size:88px;line-height:1;color:#FF4B42">$700</span><span style="font-size:16px;color:#B9BDC6">a tasa BCV</span></div>
@@ -261,7 +327,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- BANCO -->
-<section id="banco" style="padding:88px 0">
+<section class="ps" id="banco" style="padding:88px 0">
 <div class="wrap split">
 <figure style="max-width:480px;width:100%;justify-self:center"><img src="img/jaula/banco-principal.webp" alt="Banco ajustable negro con respaldo inclinable" width="1000" height="1541" style="aspect-ratio:4/5;object-fit:cover;object-position:50% 30%"></figure>
 <div style="display:flex;flex-direction:column;gap:20px">
@@ -278,7 +344,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- FICHA TECNICA -->
-<section id="ficha" style="padding:88px 0">
+<section class="ps" id="ficha" style="padding:88px 0">
 <div class="wrap split" style="align-items:start">
 <div style="display:flex;flex-direction:column;gap:20px">
 <span class="eyebrow">Ficha técnica</span>
@@ -302,7 +368,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- MERCADO LIBRE -->
-<section id="mercadolibre" style="background:#FFF159;color:#2D3277;padding:64px 0">
+<section class="ps" id="mercadolibre" style="background:#FFF159;color:#2D3277;padding:64px 0">
 <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px">
 <div style="display:flex;flex-direction:column;gap:10px;max-width:640px">
 <span style="font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase">Compra con respaldo</span>
@@ -317,7 +383,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background:#FFFFFF;padding:88px 0">
+<section class="ps" id="faq" style="background:#FFFFFF;padding:88px 0">
 <div class="wrap" style="display:flex;flex-direction:column;gap:32px;max-width:880px">
 <h2 class="h2">Preguntas frecuentes</h2>
 <div style="display:flex;flex-direction:column;gap:12px">
@@ -335,7 +401,7 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </section>
 
 <!-- CTA FINAL -->
-<section style="background:#D7261E;color:#FFFFFF;padding:72px 0">
+<section class="ps" style="background:#D7261E;color:#FFFFFF;padding:72px 0">
 <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px">
 <div style="display:flex;flex-direction:column;gap:10px;max-width:680px">
 <h2 class="h2">Empieza a entrenar en casa esta semana.</h2>
@@ -355,6 +421,10 @@ details p{margin:0 0 20px;font-size:16px;line-height:1.6;color:#4A4D55}
 </div>
 </footer>
 
+<nav class="m-bar" aria-label="Comprar">
+<a class="btn btn-r" href="https://wa.me/584149796282?text=Hola%2C%20me%20interesa%20la%20jaula%20multifuncional" target="_blank" rel="noopener">WhatsApp</a>
+<a class="btn btn-ml" href="https://articulo.mercadolibre.com.ve/MLV-781884083-power-rack-multifuncional-con-polea-barra-dominadas-_JM" target="_blank" rel="noopener">Mercado Libre</a>
+</nav>
 <a class="wa-float" href="https://wa.me/584149796282?text=Hola%2C%20me%20interesa%20la%20jaula%20multifuncional" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"></path><path fill="currentColor" d="M8 10h2v2H8zm3 0h2v2h-2zm3 0h2v2h-2z"></path></svg><span>WhatsApp</span></a>
 
 </body>
