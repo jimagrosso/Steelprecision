@@ -308,6 +308,14 @@ footer{padding-block:28px;font-size:.85rem;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .home{display:inline-block;margin-bottom:18px;font-weight:700;color:var(--yellow-ink);text-decoration:none;font-size:.95rem}
 </style>
+<!-- Meta Pixel: visitas y clics a WhatsApp -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1822109572453050');fbq('track','PageView');fbq('track','ViewContent',{content_name:'MR-216'});
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a');if(!a)return;var h=a.href||'';
+if(h.indexOf('wa.me')>-1){fbq('track','Contact',{content_name:'MR-216'});}
+else if(h.indexOf('mercadolibre')>-1){fbq('trackCustom','ClicMercadoLibre',{content_name:'MR-216'});}},true);
+</script>
 </head>
 <body>
 

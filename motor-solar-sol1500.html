@@ -135,6 +135,14 @@ h2{font-size:44px}
 }
 .wa-float{display:none;position:fixed;right:20px;bottom:20px;z-index:50;align-items:center;gap:10px;background:#1F9D55;color:#fff;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.28)}
 </style>
+<!-- Meta Pixel: visitas y clics a WhatsApp -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1822109572453050');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Motor SOL-1500'});
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a');if(!a)return;var h=a.href||'';
+if(h.indexOf('wa.me')>-1){fbq('track','Contact',{content_name:'Motor SOL-1500'});}
+else if(h.indexOf('mercadolibre')>-1){fbq('trackCustom','ClicMercadoLibre',{content_name:'Motor SOL-1500'});}},true);
+</script>
 </head>
 <body>
 
